@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RobloxGuide.fr – Astuces, Codes & Guides Roblox</title>
+  <meta name="description" content="Découvrez les meilleurs guides Roblox : codes promo, robux légaux, astuces Adopt Me, Blox Fruits et plus encore." />
+  <!-- Favicon data:image -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%231e3a8a'/><text y='.9em' font-size='80' x='10'>🎮</text></svg>" />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;900&family=Sora:wght@400;600;800&display=swap" rel="stylesheet" />
+  <!-- CODE PUSH MONETAG -->
+  <!-- <script src="https://your-monetag-push-script.js"></script> -->
+  <style>
+    /* ===================== RESET & VARIABLES ===================== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --blue: #1e3a8a;
+      --blue-mid: #2d52b8;
+      --blue-light: #dbeafe;
+      --orange: #f97316;
+      --orange-light: #fff7ed;
+      --white: #ffffff;
+      --gray-100: #f8fafc;
+      --gray-200: #e2e8f0;
+      --gray-400: #94a3b8;
+      --gray-700: #334155;
+      --gray-900: #0f172a;
+      --font-head: 'Sora', sans-serif;
+      --font-body: 'Nunito', sans-serif;
+      --radius: 14px;
+      --shadow: 0 4px 24px rgba(30,58,138,.10);
+      --shadow-hover: 0 8px 40px rgba(30,58,138,.18);
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-body);
+      background: var(--gray-100);
+      color: var(--gray-900);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    /* ===================== HEADER / NAV ===================== */
+    header {
+      background: var(--blue);
+      position: sticky; top: 0; z-index: 100;
+      box-shadow: 0 2px 16px rgba(30,58,138,.25);
+    }
+    .nav-inner {
+      max-width: 1100px; margin: 0 auto;
+      padding: 0 1.2rem;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 64px;
+    }
+    .logo {
+      font-family: var(--font-head);
+      font-weight: 800; font-size: 1.35rem;
+      color: var(--white);
+      display: flex; align-items: center; gap: .5rem;
+    }
+    .logo span { color: var(--orange); }
+    nav ul {
+      list-style: none;
+      display: flex; align-items: center; gap: .2rem;
+    }
+    nav ul li { position: relative; }
+    nav ul li a {
+      display: block;
+      padding: .45rem .85rem;
+      color: rgba(255,255,255,.88);
+      font-weight: 600; font-size: .92rem;
+      border-radius: 8px;
+      transition: background .2s, color .2s;
+    }
+    nav ul li a:hover, nav ul li a.active {
+      background: rgba(255,255,255,.13);
+      color: var(--white);
+    }
+    /* Dropdown */
+    .has-drop > a::after { content: ' ▾'; font-size: .7rem; }
+    .dropdown {
+      display: none; position: absolute; top: 100%; left: 0;
+      background: var(--white); border-radius: 10px;
+      box-shadow: 0 8px 32px rgba(30,58,138,.18);
+      min-width: 220px; padding: .4rem 0; z-index: 200;
+    }
+    .has-drop:hover .dropdown { display: block; }
+    .dropdown li a {
+      color: var(--gray-700); font-size: .88rem;
+      border-radius: 0; padding: .52rem 1.1rem;
+    }
+    .dropdown li a:hover { background: var(--blue-light); color: var(--blue); }
+    /* Hamburger */
+    .hamburger {
+      display: none; flex-direction: column; gap: 5px;
+      cursor: pointer; padding: .4rem; border: none; background: transparent;
+    }
+    .hamburger span {
+      display: block; width: 24px; height: 2.5px;
+      background: var(--white); border-radius: 4px; transition: .3s;
+    }
+    .mobile-nav {
+      display: none; background: var(--blue);
+      padding: .8rem 1.2rem 1rem;
+    }
+    .mobile-nav a {
+      display: block; color: rgba(255,255,255,.9);
+      padding: .55rem 0; font-weight: 600; font-size: .95rem;
+      border-bottom: 1px solid rgba(255,255,255,.1);
+    }
+    .mobile-nav a:last-child { border-bottom: none; }
+    .mobile-nav.open { display: block; }
+
+    /* ===================== AD BANNER 728x90 ===================== */
+    .ad-top-bar {
+      background: var(--gray-200);
+      display: flex; justify-content: center; align-items: center;
+      padding: .6rem 1rem; min-height: 60px;
+    }
+    .ad-placeholder {
+      border: 2px dashed var(--gray-400);
+      display: flex; align-items: center; justify-content: center;
+      font-size: .8rem; color: var(--gray-400); font-family: monospace;
+      background: var(--white); border-radius: 6px;
+    }
+    .ad-728x90 { width: 728px; max-width: 100%; height: 90px; }
+
+    /* ===================== HERO ===================== */
+    .hero {
+      background: linear-gradient(135deg, var(--blue) 0%, var(--blue-mid) 60%, #1e40af 100%);
+      padding: 3.5rem 1.2rem 3rem;
+      text-align: center; position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 70% 50%, rgba(249,115,22,.15) 0%, transparent 60%);
+    }
+    .hero-inner { max-width: 700px; margin: 0 auto; position: relative; z-index: 1; }
+    .hero h1 {
+      font-family: var(--font-head); font-weight: 800;
+      font-size: clamp(1.9rem, 5vw, 3rem);
+      color: var(--white); line-height: 1.15; margin-bottom: 1rem;
+    }
+    .hero h1 em { color: var(--orange); font-style: normal; }
+    .hero p {
+      color: rgba(255,255,255,.82); font-size: 1.08rem;
+      max-width: 560px; margin: 0 auto 1.8rem;
+    }
+    .btn-primary {
+      display: inline-block;
+      background: var(--orange); color: var(--white);
+      font-family: var(--font-head); font-weight: 700; font-size: .97rem;
+      padding: .75rem 2rem; border-radius: 50px;
+      box-shadow: 0 4px 20px rgba(249,115,22,.35);
+      transition: transform .2s, box-shadow .2s;
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 28px rgba(249,115,22,.45); }
+
+    /* ===================== ARTICLES SECTION ===================== */
+    .section { max-width: 1100px; margin: 0 auto; padding: 2.5rem 1.2rem; }
+    .section-title {
+      font-family: var(--font-head); font-weight: 800;
+      font-size: 1.6rem; color: var(--blue);
+      margin-bottom: 1.8rem;
+      display: flex; align-items: center; gap: .6rem;
+    }
+    .section-title::after {
+      content: ''; flex: 1; height: 2px;
+      background: linear-gradient(90deg, var(--orange), transparent);
+    }
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+    .card {
+      background: var(--white); border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      transition: transform .25s, box-shadow .25s;
+      display: flex; flex-direction: column;
+    }
+    .card:hover { transform: translateY(-5px); box-shadow: var(--shadow-hover); }
+    .card-thumb {
+      width: 100%; height: 165px;
+      object-fit: cover;
+      background: linear-gradient(135deg, var(--blue-light), #c7d2fe);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 3.5rem;
+    }
+    .card-body { padding: 1.2rem 1.3rem 1.4rem; flex: 1; display: flex; flex-direction: column; }
+    .card-tag {
+      display: inline-block;
+      background: var(--blue-light); color: var(--blue);
+      font-size: .72rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: .05em; padding: .2rem .6rem; border-radius: 50px;
+      margin-bottom: .65rem;
+    }
+    .card h2 {
+      font-family: var(--font-head); font-weight: 700;
+      font-size: 1.05rem; line-height: 1.35;
+      color: var(--gray-900); margin-bottom: .55rem;
+    }
+    .card p {
+      font-size: .88rem; color: var(--gray-700);
+      line-height: 1.6; flex: 1; margin-bottom: 1rem;
+    }
+    .card-link {
+      align-self: flex-start;
+      background: var(--blue); color: var(--white);
+      font-weight: 700; font-size: .85rem;
+      padding: .5rem 1.2rem; border-radius: 8px;
+      transition: background .2s;
+    }
+    .card-link:hover { background: var(--blue-mid); }
+
+    /* ===================== FOOTER ===================== */
+    footer {
+      background: var(--gray-900); color: rgba(255,255,255,.7);
+      padding: 2.5rem 1.2rem 1.5rem;
+      margin-top: auto;
+    }
+    .footer-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: flex; flex-wrap: wrap; gap: 2rem;
+      justify-content: space-between;
+    }
+    .footer-col h3 {
+      font-family: var(--font-head); font-weight: 700;
+      color: var(--white); font-size: .95rem; margin-bottom: .8rem;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: .4rem; }
+    .footer-col ul li a { color: rgba(255,255,255,.6); font-size: .88rem; transition: color .2s; }
+    .footer-col ul li a:hover { color: var(--orange); }
+    .footer-disclaimer {
+      max-width: 1100px; margin: 1.8rem auto 0;
+      padding-top: 1.2rem; border-top: 1px solid rgba(255,255,255,.1);
+      font-size: .78rem; color: rgba(255,255,255,.45);
+      line-height: 1.65;
+    }
+    .footer-logo { color: var(--white); font-family: var(--font-head); font-weight: 800; font-size: 1.1rem; }
+    .footer-logo span { color: var(--orange); }
+
+    /* ===================== RESPONSIVE ===================== */
+    @media (max-width: 768px) {
+      nav ul { display: none; }
+      .hamburger { display: flex; }
+      .ad-728x90 { width: 320px; height: 50px; }
+    }
+    @media (max-width: 480px) {
+      .hero { padding: 2.2rem 1rem 2rem; }
+      .cards-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header>
+  <div class="nav-inner">
+    <a href="index.html" class="logo">🎮 Roblox<span>Guide</span></a>
+    <nav>
+      <ul>
+        <li><a href="index.html" class="active">Accueil</a></li>
+        <li class="has-drop">
+          <a href="#">Articles</a>
+          <ul class="dropdown">
+            <li><a href="article1.html">🎁 Codes Promo Roblox</a></li>
+            <li><a href="article2.html">💰 Robux Gratuits (légal)</a></li>
+            <li><a href="article3.html">🏆 Top 5 Jeux qui Rapportent</a></li>
+            <li><a href="article4.html">🥚 Objets Rares Adopt Me!</a></li>
+            <li><a href="article5.html">⚔️ Level Up Blox Fruits</a></li>
+            <li><a href="article6.html">🛠️ Créer son Jeu Roblox</a></li>
+          </ul>
+        </li>
+        <li><a href="mailto:contact@robloxguide.fr">Contact</a></li>
+        <li><a href="#legal">Mentions légales</a></li>
+      </ul>
+    </nav>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-nav" id="mobile-nav">
+    <a href="index.html">🏠 Accueil</a>
+    <a href="article1.html">🎁 Codes Promo</a>
+    <a href="article2.html">💰 Robux Légaux</a>
+    <a href="article3.html">🏆 Top 5 Jeux</a>
+    <a href="article4.html">🥚 Adopt Me!</a>
+    <a href="article5.html">⚔️ Blox Fruits</a>
+    <a href="article6.html">🛠️ Créer un Jeu</a>
+    <a href="mailto:contact@robloxguide.fr">✉️ Contact</a>
+    <a href="#legal">⚖️ Mentions légales</a>
+  </div>
+</header>
+
+<!-- ===== AD BANNER 728x90 ===== -->
+<div class="ad-top-bar">
+  <!-- ADSTERRA BANNER 728x90 — Remplacez le div ci-dessous par votre code Adsterra -->
+  <div class="ad-placeholder ad-728x90">[ Publicité 728×90 — Insérer le code Adsterra/Google Ads ici ]</div>
+</div>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="hero-inner">
+    <h1>Le guide ultime pour <em>maîtriser Roblox</em> en 2026</h1>
+    <p>Codes promo, astuces légales pour les Robux, guides de jeux et conseils de création. Tout ce qu'il vous faut pour progresser.</p>
+    <a href="#articles" class="btn-primary">📖 Voir tous les articles</a>
+  </div>
+</section>
+
+<!-- ===== ARTICLES GRID ===== -->
+<section class="section" id="articles">
+  <h2 class="section-title">🔥 Nos derniers guides</h2>
+  <div class="cards-grid">
+
+    <!-- Carte 1 -->
+    <article class="card">
+      <div class="card-thumb">🎁</div>
+      <div class="card-body">
+        <span class="card-tag">Codes Promo</span>
+        <h2>Codes promo Roblox actifs en 2026</h2>
+        <p>Découvrez 8 codes promotionnels pour obtenir des objets gratuits sur Roblox. Instructions étape par étape pour les activer.</p>
+        <a href="article1.html" class="card-link">Lire l'article →</a>
+      </div>
+    </article>
+
+    <!-- Carte 2 -->
+    <article class="card">
+      <div class="card-thumb">💰</div>
+      <div class="card-body">
+        <span class="card-tag">Robux</span>
+        <h2>Robux gratuits sans hack : les méthodes légales</h2>
+        <p>Microsoft Rewards, events officiels, création de jeux… Comment gagner des Robux honnêtement et sans risque.</p>
+        <a href="article2.html" class="card-link">Lire l'article →</a>
+      </div>
+    </article>
+
+    <!-- Carte 3 -->
+    <article class="card">
+      <div class="card-thumb">🏆</div>
+      <div class="card-body">
+        <span class="card-tag">Jeux</span>
+        <h2>Top 5 jeux Roblox qui rapportent des Robux</h2>
+        <p>Adopt Me!, Brookhaven, Blox Fruits… Quels jeux valent vraiment le coup pour progresser et gagner des récompenses ?</p>
+        <a href="article3.html" class="card-link">Lire l'article →</a>
+      </div>
+    </article>
+
+    <!-- Carte 4 -->
+    <article class="card">
+      <div class="card-thumb">🥚</div>
+      <div class="card-body">
+        <span class="card-tag">Adopt Me!</span>
+        <h2>Objets rares dans Adopt Me! : le guide complet</h2>
+        <p>Astuces pour obtenir les œufs légendaires, réussir l'élevage et sécuriser vos échanges dans Adopt Me!.</p>
+        <a href="article4.html" class="card-link">Lire l'article →</a>
+      </div>
+    </article>
+
+    <!-- Carte 5 -->
+    <article class="card">
+      <div class="card-thumb">⚔️</div>
+      <div class="card-body">
+        <span class="card-tag">Blox Fruits</span>
+        <h2>Level up rapide dans Blox Fruits</h2>
+        <p>Meilleures îles, boss à farmer et stratégies pour grimper les niveaux rapidement dans Blox Fruits en 2026.</p>
+        <a href="article5.html" class="card-link">Lire l'article →</a>
+      </div>
+    </article>
+
+    <!-- Carte 6 -->
+    <article class="card">
+      <div class="card-thumb">🛠️</div>
+      <div class="card-body">
+        <span class="card-tag">Création</span>
+        <h2>Créer son jeu Roblox : introduction à Roblox Studio</h2>
+        <p>Comment créer et monétiser votre propre jeu sur Roblox avec Roblox Studio. Game passes, produits et conseils pour débutants.</p>
+        <a href="article6.html" class="card-link">Lire l'article →</a>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer id="legal">
+  <div class="footer-inner">
+    <div class="footer-col">
+      <div class="footer-logo">🎮 Roblox<span>Guide</span></div>
+      <p style="margin-top:.7rem;font-size:.85rem;color:rgba(255,255,255,.5);max-width:220px;">Votre source d'astuces Roblox en français. Guides éducatifs et informatifs.</p>
+    </div>
+    <div class="footer-col">
+      <h3>Articles</h3>
+      <ul>
+        <li><a href="article1.html">Codes Promo</a></li>
+        <li><a href="article2.html">Robux Légaux</a></li>
+        <li><a href="article3.html">Top 5 Jeux</a></li>
+        <li><a href="article4.html">Adopt Me!</a></li>
+        <li><a href="article5.html">Blox Fruits</a></li>
+        <li><a href="article6.html">Créer un Jeu</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h3>Liens utiles</h3>
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="mailto:contact@robloxguide.fr">Contact</a></li>
+        <li><a href="#legal">Mentions légales</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-disclaimer">
+    <strong style="color:rgba(255,255,255,.6)">⚖️ Mentions légales &amp; Avis de non-responsabilité :</strong><br>
+    Ce site n'est pas affilié à Roblox Corporation. Les marques et jeux cités (Roblox, Adopt Me!, Blox Fruits, Brookhaven, Tower of Hell, MeepCity) sont la propriété de leurs détenteurs respectifs. Les codes et astuces sont fournis à titre purement informatif. Nous ne garantissons pas leur validité. Vérifiez toujours les informations sur les sources officielles. Ce site est indépendant et non sponsorisé par Roblox Corporation ou ses partenaires.<br><br>
+    © 2026 RobloxGuide.fr — Site éducatif non-affilié
+  </div>
+</footer>
+
+<!-- INSÉRER CODE POPUNDER ADSTERRA/MONETAG ICI -->
+<!-- <script src="https://your-popunder-script.js"></script> -->
+
+<script>
+  // Mobile hamburger menu
+  const hamburger = document.getElementById('hamburger');
+  const mobileNav = document.getElementById('mobile-nav');
+  hamburger.addEventListener('click', () => {
+    mobileNav.classList.toggle('open');
+  });
+</script>
+</body>
+</html>
